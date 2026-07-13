@@ -168,7 +168,12 @@
         </label>
       </div>
       <label>Aprašymas<textarea name="Taisymo aprašymas" rows="5" required placeholder="Trumpai aprašykite, ką reikia pataisyti"></textarea></label>
-      <label>Nuotraukos<br><small>Nuotraukas kol kas galėsite atsiųsti atskirai, kai susisieksime telefonu.</small></label>
+      <label>Nuotraukos
+      <input id="photoInput" name="Nuotraukos" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+      <small>Galite įkelti iki 3 nuotraukų. Viena nuotrauka – iki 8 MB.</small>
+      <div id="photoPreview" class="photo-preview"></div>
+      <p id="uploadStatus" class="upload-status" aria-live="polite"></p>
+    </label>
       <div class="two-col">
         <label>Grąžinimas
           <select name="Grąžinimo būdas">

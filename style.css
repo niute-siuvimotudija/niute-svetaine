@@ -19,3 +19,11 @@ footer{padding:55px 0 20px;background:#2d251f;color:#fff}.footer-grid{display:gr
 .call-button:hover{background:var(--brown-dark)}
 .form-message.loading{color:var(--brown)}
 .form-message.error{color:#a04435}
+
+.photo-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.photo-preview-item{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.photo-preview-item img{width:100%;height:100%;object-fit:cover;display:block}
+.upload-status{margin:8px 0 0;font-size:.9rem;color:var(--muted)}
+.upload-status.error{color:#a04435}
+.upload-status.success{color:var(--green);font-weight:700}
+@media(max-width:560px){.photo-preview{grid-template-columns:repeat(3,1fr)}}

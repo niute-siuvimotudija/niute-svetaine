@@ -1,8 +1,12 @@
-NIUTE 2.4 – veikianti el. pašto forma
+NIUTE 2.5 – nuotraukų įkėlimas
 
-Užsakymo forma prijungta prie Web3Forms.
-Užsakymų gavėjo el. paštas: linakatiliu@gmail.com
-Telefonas: +370 608 23342
+Prijungta:
+- Cloudinary Cloud name: jrberzhn
+- Unsigned upload preset: Niute_siuvimostudija
+- Iki 3 nuotraukų
+- Iki 8 MB vienai nuotraukai
+- Nuotraukų peržiūra prieš pateikiant formą
+- Nuotraukų nuorodos siunčiamos kartu su užsakymu į Web3Forms el. laišką
 
 Į GitHub pakeiskite:
 - index.html
@@ -12,7 +16,9 @@ Telefonas: +370 608 23342
 
 Po Commit changes Cloudflare automatiškai atnaujins svetainę.
 
-Svarbu:
-- Pirmą kartą Web3Forms gali atsiųsti patvirtinimo laišką į linakatiliu@gmail.com. Patvirtinkite jį.
-- Nuotraukų prisegimas šioje versijoje išjungtas. Klientui parašyta, kad nuotraukas bus galima atsiųsti atskirai.
-- Access Key yra svetainės kode, kaip įprasta naudojant Web3Forms. Jei pradėtų eiti šlamštas, Web3Forms paskyroje sugeneruokite naują raktą.
+Patikrinimas:
+1. Atidarykite svetainę.
+2. Užpildykite bandomąjį užsakymą.
+3. Pridėkite 1–3 nuotraukas.
+4. Patikrinkite linakatiliu@gmail.com.
+5. Laiške turi būti laukas „Nuotraukų nuorodos“.
