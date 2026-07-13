@@ -1,12 +1,10 @@
-NIUTE 2.5 – nuotraukų įkėlimas
+NIUTE 2.6 – pataisyta neužsikrovimo klaida
 
-Prijungta:
-- Cloudinary Cloud name: jrberzhn
-- Unsigned upload preset: Niute_siuvimostudija
-- Iki 3 nuotraukų
-- Iki 8 MB vienai nuotraukai
-- Nuotraukų peržiūra prieš pateikiant formą
-- Nuotraukų nuorodos siunčiamos kartu su užsakymu į Web3Forms el. laišką
+Pataisyta:
+- JavaScript sintaksės klaida nuotraukų nuorodų sąraše;
+- puslapio turinys dabar matomas net jei JavaScript nesuveiktų;
+- išlaikytas nuotraukų įkėlimas į Cloudinary;
+- užsakymo duomenys ir nuotraukų nuorodos siunčiami per Web3Forms.
 
 Į GitHub pakeiskite:
 - index.html
@@ -14,11 +12,5 @@ Prijungta:
 - script.js
 - README.txt
 
-Po Commit changes Cloudflare automatiškai atnaujins svetainę.
-
-Patikrinimas:
-1. Atidarykite svetainę.
-2. Užpildykite bandomąjį užsakymą.
-3. Pridėkite 1–3 nuotraukas.
-4. Patikrinkite linakatiliu@gmail.com.
-5. Laiške turi būti laukas „Nuotraukų nuorodos“.
+Po Commit changes palaukite 1–3 minutes ir atnaujinkite puslapį.
+Jei telefone dar rodoma sena versija, uždarykite naršyklės kortelę ir atidarykite svetainę iš naujo.

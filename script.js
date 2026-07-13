@@ -119,8 +119,7 @@ document.getElementById("orderForm").addEventListener("submit", async event => {
     if (photoUrls.length) {
       formData.append(
         "Nuotraukų nuorodos",
-        photoUrls.map((url, index) => `${index + 1}. ${url}`).join("
-")
+        photoUrls.map((url, index) => `${index + 1}. ${url}`).join("\\n")
       );
     } else {
       formData.append("Nuotraukų nuorodos", "Nuotraukos nepridėtos");
