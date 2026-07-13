@@ -20,3 +20,8 @@ footer{padding:28px 0;background:#211c18;color:#e9ded4}.footer-wrap{display:flex
   .header-cta{padding:10px 14px;font-size:.72rem}
   .logo span{font-size:1.8rem}
 }
+
+.site-header nav{display:none;position:absolute;top:76px;right:16px;background:rgba(35,29,24,.97);padding:16px 20px;border-radius:10px;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.site-header nav.open{display:flex}
+.site-header nav a{text-decoration:none;color:#fff}
+.menu-button{margin-left:auto;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
