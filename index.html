@@ -28,6 +28,7 @@
       <a href="#kainos">Kainos</a>
       <a href="#kaip-veikia">Kaip tai veikia</a>
       <a href="#apie">Apie</a>
+      <a href="#duk">DUK</a>
       <a href="#kontaktai">Kontaktai</a>
     </nav>
   </div>
@@ -126,7 +127,8 @@
 
       <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="f983f3ed-9561-46b5-b702-f2890b584e45">
-        <input type="hidden" name="subject" value="Naujas NIUTE užsakymas">
+        <input type="hidden" id="emailSubject" name="subject" value="Naujas NIUTE užsakymas">
+        <input type="hidden" id="orderNumberField" name="Užsakymo numeris" value="">
         <input type="hidden" name="from_name" value="NIUTE svetainė">
         <input type="checkbox" name="botcheck" class="hidden-botcheck" tabindex="-1" autocomplete="off">
 
@@ -188,6 +190,11 @@
 
         <button class="button button-dark full" type="submit">Pateikti užsakymą</button>
         <p id="formMessage" class="form-message" aria-live="polite"></p>
+        <div id="orderConfirmation" class="order-confirmation" hidden>
+          <strong>Ačiū! Jūsų užsakymas sėkmingai gautas.</strong>
+          <span id="confirmationOrderNumber"></span>
+          <small>Užsakymo numerį išsaugokite, jei reikėtų susisiekti.</small>
+        </div>
       </form>
     </div>
   </div>
@@ -209,6 +216,41 @@
       <h3>Terminai</h3>
       <p>Dažniausiai 3–7 darbo dienos. Sudėtingi darbai gali užtrukti iki 14 darbo dienų.</p>
     </div>
+  </div>
+</section>
+
+
+<section id="duk" class="section soft">
+  <div class="container faq-wrap">
+    <div class="section-heading center reveal">
+      <p class="eyebrow">DUK</p>
+      <h2>Dažniausiai užduodami klausimai</h2>
+    </div>
+
+    <details class="reveal">
+      <summary>Ar priimate siuntas iš visos Lietuvos?</summary>
+      <p>Taip. Dirbame nuotoliniu būdu ir priimame siuntas iš visos Lietuvos.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Kiek laiko trunka taisymas?</summary>
+      <p>Dažniausiai 3–7 darbo dienas. Sudėtingesni darbai gali užtrukti iki 14 darbo dienų.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Kada sužinosiu galutinę kainą?</summary>
+      <p>Galutinę kainą patvirtiname apžiūrėję drabužį. Darbų nepradedame be Jūsų sutikimo.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Kas apmoka siuntimą?</summary>
+      <p>Klientas apmoka siuntimą ir grąžinimą.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Ar galiu pridėti drabužio nuotraukas?</summary>
+      <p>Taip. Užsakymo formoje galima pridėti iki 3 nuotraukų.</p>
+    </details>
   </div>
 </section>
 

@@ -1,4 +1,6 @@
 
+document.getElementById("year").textContent = new Date().getFullYear();
+
 const menuButton = document.querySelector(".menu-button");
 const drawerMenu = document.querySelector(".drawer-menu");
 
@@ -26,9 +28,6 @@ if (menuButton && drawerMenu) {
   });
 }
 
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add("visible");
@@ -45,7 +44,13 @@ const photoInput = document.getElementById("photoInput");
 const photoPreview = document.getElementById("photoPreview");
 const uploadStatus = document.getElementById("uploadStatus");
 
-photoInput.addEventListener("change", () => {
+function createOrderNumber() {
+  const now = new Date();
+  const pad = value => String(value).padStart(2, "0");
+  return `NI-${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+}
+
+photoInput?.addEventListener("change", () => {
   const files = [...photoInput.files];
   photoPreview.innerHTML = "";
   uploadStatus.textContent = "";
@@ -96,11 +101,13 @@ async function uploadPhoto(file) {
   return result.secure_url;
 }
 
-document.getElementById("orderForm").addEventListener("submit", async event => {
+document.getElementById("orderForm")?.addEventListener("submit", async event => {
   event.preventDefault();
 
   const form = event.currentTarget;
   const message = document.getElementById("formMessage");
+  const confirmation = document.getElementById("orderConfirmation");
+  const confirmationNumber = document.getElementById("confirmationOrderNumber");
   const submitButton = form.querySelector('button[type="submit"]');
 
   if (!form.checkValidity()) {
@@ -108,8 +115,13 @@ document.getElementById("orderForm").addEventListener("submit", async event => {
     return;
   }
 
+  const orderNumber = createOrderNumber();
+  document.getElementById("orderNumberField").value = orderNumber;
+  document.getElementById("emailSubject").value = `Naujas NIUTE užsakymas – ${orderNumber}`;
+
   const files = [...photoInput.files];
   submitButton.disabled = true;
+  confirmation.hidden = true;
   message.className = "form-message";
   message.textContent = files.length ? "Įkeliamos nuotraukos..." : "Siunčiamas užsakymas...";
 
@@ -123,6 +135,8 @@ document.getElementById("orderForm").addEventListener("submit", async event => {
 
     const formData = new FormData(form);
     formData.delete("Nuotraukos");
+    formData.set("Užsakymo numeris", orderNumber);
+    formData.set("subject", `Naujas NIUTE užsakymas – ${orderNumber}`);
     formData.append(
       "Nuotraukų nuorodos",
       photoUrls.length
@@ -130,16 +144,20 @@ document.getElementById("orderForm").addEventListener("submit", async event => {
         : "Nuotraukos nepridėtos"
     );
 
-    const response = await fetch(form.action, { method: "POST", body: formData });
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData
+    });
     const result = await response.json();
 
     if (!response.ok || !result.success) {
       throw new Error(result.message || "Nepavyko išsiųsti užsakymo.");
     }
 
-    const number = `NI-${new Date().getFullYear()}-${String(Math.floor(Math.random()*90000)+10000)}`;
-    message.className = "form-message success";
-    message.textContent = `Ačiū! Užsakymas išsiųstas. Užsakymo numeris: ${number}`;
+    message.textContent = "";
+    confirmationNumber.textContent = `Užsakymo Nr. ${orderNumber}`;
+    confirmation.hidden = false;
+
     form.reset();
     photoPreview.innerHTML = "";
     uploadStatus.textContent = "";
