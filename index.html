@@ -60,14 +60,14 @@
       <p>Orientacinė kaina patvirtinama gavus ir apžiūrėjus drabužį.</p>
     </div>
     <div class="service-grid">
-      <article class="service-card reveal"><div class="icon">✂</div><h3>Kelnių trumpinimas</h3><p>nuo 10 €</p></article>
-      <article class="service-card reveal"><div class="icon">♮</div><h3>Džinsų trumpinimas</h3><p>nuo 15 €</p></article>
-      <article class="service-card reveal"><div class="icon">△</div><h3>Sijonų trumpinimas</h3><p>nuo 12 €</p></article>
-      <article class="service-card reveal"><div class="icon">♧</div><h3>Suknelių trumpinimas</h3><p>nuo 15 €</p></article>
-      <article class="service-card reveal"><div class="icon">⌁</div><h3>Užtrauktukų keitimas</h3><p>nuo 12 €</p></article>
-      <article class="service-card reveal"><div class="icon">⊕</div><h3>Skylių taisymas</h3><p>nuo 8 €</p></article>
-      <article class="service-card reveal"><div class="icon">●</div><h3>Sagų prisiuvimas</h3><p>nuo 2 € / vnt.</p></article>
-      <article class="service-card reveal"><div class="icon">↔</div><h3>Drabužių siaurinimas</h3><p>nuo 15 €</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 8h24l-3 48H23L20 8Z"/><path d="M24 22h16M32 8v48"/></svg></div><h3>Kelnių trumpinimas</h3><p>nuo 10 €</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 8h28l-2 48H34l-2-25-2 25H20L18 8Z"/><path d="M24 8v12h16V8M22 26h20"/></svg></div><h3>Džinsų trumpinimas</h3><p>nuo 15 €</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M25 8h14l3 12 10 36H12l10-36 3-12Z"/><path d="M22 20h20M18 42h28"/></svg></div><h3>Sijonų trumpinimas</h3><p>nuo 12 €</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M24 8l8 8 8-8 5 14-6 6 5 28H20l5-28-6-6 5-14Z"/><path d="M25 28h14"/></svg></div><h3>Suknelių trumpinimas</h3><p>nuo 15 €</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M27 8h10v10H27zM27 46h10v10H27z"/><path d="M32 18v28"/><path d="M27 24h10M27 32h10M27 40h10"/></svg></div><h3>Užtrauktukų keitimas</h3><p>nuo 12 €</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="21"/><path d="M20 32h24M32 20v24"/><path d="M24 24l16 16M40 24 24 40"/></svg></div><h3>Skylių taisymas</h3><p>nuo 8 €</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><circle cx="25" cy="25" r="3"/><circle cx="39" cy="25" r="3"/><circle cx="25" cy="39" r="3"/><circle cx="39" cy="39" r="3"/></svg></div><h3>Sagų prisiuvimas</h3><p>nuo 2 € / vnt.</p></article>
+      <article class="service-card reveal"><div class="icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 10h28l-3 44H21L18 10Z"/><path d="M15 32h34"/><path d="m15 32 7-6M15 32l7 6M49 32l-7-6M49 32l-7 6"/></svg></div><h3>Drabužių siaurinimas</h3><p>nuo 15 €</p></article>
     </div>
   </div>
 </section>
@@ -137,24 +137,29 @@
       <p>Užpildykite formą. Gavę užklausą susisieksime telefonu dėl preliminarios kainos ir siuntimo.</p>
       <div class="contact-note">
         <strong>Telefonas užsakymams</strong><br>
-        <a href="tel:+37060823342">+370 608 23342</a>
+        <a href="tel:+37060823342">+370 608 23342</a><br><a class="call-button" href="tel:+37060823342">Skambinti dabar</a>
       </div>
     </div>
-    <form id="orderForm" class="order-form reveal">
+    <form id="orderForm" class="order-form reveal" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="f983f3ed-9561-46b5-b702-f2890b584e45">
+      <input type="hidden" name="subject" value="Naujas NIUTE užsakymas">
+      <input type="hidden" name="from_name" value="NIUTE svetainė">
+      <input type="hidden" name="redirect" value="">
+      <input type="checkbox" name="botcheck" class="hidden-botcheck" tabindex="-1" autocomplete="off">
       <div class="two-col">
-        <label>Vardas ir pavardė<input name="name" required></label>
-        <label>Telefonas<input name="phone" type="tel" required></label>
+        <label>Vardas ir pavardė<input name="Kliento vardas" required></label>
+        <label>Telefonas<input name="Telefono numeris" type="tel" required></label>
       </div>
       <div class="two-col">
         <label>Drabužis
-          <select name="garment" required>
+          <select name="Drabužio tipas" required>
             <option value="">Pasirinkite</option>
             <option>Kelnės / džinsai</option><option>Sijonas</option><option>Suknelė</option>
             <option>Striukė / švarkas</option><option>Marškiniai</option><option>Kita</option>
           </select>
         </label>
         <label>Paslauga
-          <select name="service" required>
+          <select name="Paslauga" required>
             <option value="">Pasirinkite</option>
             <option>Trumpinimas</option><option>Siaurinimas / platinimas</option>
             <option>Užtrauktuko keitimas</option><option>Skylės / siūlės taisymas</option>
@@ -162,17 +167,17 @@
           </select>
         </label>
       </div>
-      <label>Aprašymas<textarea name="details" rows="5" required placeholder="Trumpai aprašykite, ką reikia pataisyti"></textarea></label>
-      <label>Nuotraukos<input name="photos" type="file" accept="image/*" multiple><small>Šioje nemokamoje versijoje nuotraukos dar neišsiunčiamos.</small></label>
+      <label>Aprašymas<textarea name="Taisymo aprašymas" rows="5" required placeholder="Trumpai aprašykite, ką reikia pataisyti"></textarea></label>
+      <label>Nuotraukos<br><small>Nuotraukas kol kas galėsite atsiųsti atskirai, kai susisieksime telefonu.</small></label>
       <div class="two-col">
         <label>Grąžinimas
-          <select name="return">
+          <select name="Grąžinimo būdas">
             <option>Omniva paštomatas</option><option>LP EXPRESS paštomatas</option>
             <option>DPD paštomatas</option><option>Atsiėmimas susitarus</option>
           </select>
         </label>
         <label>Mokėjimas
-          <select name="payment">
+          <select name="Mokėjimo būdas">
             <option>Bankinis pavedimas</option><option>Atsiskaitant atsiimant</option>
           </select>
         </label>
