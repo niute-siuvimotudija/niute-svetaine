@@ -134,3 +134,76 @@ footer{padding:28px 0;background:#211c18;color:#e9ded4}.footer-wrap{display:flex
     min-width:0;
   }
 }
+
+/* NIUTE 3.4 – kainynas ir forma telefone viena po kitos */
+@media(max-width: 820px){
+  .split-layout{
+    display:block !important;
+    width:100% !important;
+    border-left:1px solid var(--line);
+    border-right:1px solid var(--line);
+  }
+
+  .price-panel,
+  .order-panel{
+    width:100% !important;
+    max-width:none !important;
+    padding:28px 22px !important;
+  }
+
+  .order-panel{
+    border-left:0 !important;
+    border-top:1px solid var(--line) !important;
+  }
+
+  .price-list div{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:18px;
+  }
+
+  .price-list span{
+    max-width:68%;
+  }
+
+  .price-list strong{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+  .two-col{
+    grid-template-columns:1fr !important;
+  }
+
+  .order-panel h2,
+  .price-panel h2{
+    font-size:clamp(2.2rem,12vw,3.4rem);
+  }
+
+  input,
+  select,
+  textarea{
+    font-size:16px;
+  }
+}
+
+@media(max-width: 480px){
+  .split-layout{
+    margin-left:0;
+    margin-right:0;
+  }
+
+  .price-panel,
+  .order-panel{
+    padding:24px 18px !important;
+  }
+
+  .price-list div{
+    padding:16px 0;
+  }
+
+  .price-list span{
+    max-width:64%;
+  }
+}

@@ -1,11 +1,11 @@
-NIUTE 3.3 – sutvarkytas viršus
+NIUTE 3.4 – sutvarkytas mobilus kainynas ir užsakymo forma
 
 Pakeitimai:
-- pašalintos visos nuolat matomos meniu nuorodos;
-- kairėje paliktas tik NIUTE logotipas;
-- dešinėje pridėtas aiškus apvalus hamburgerio mygtukas;
-- paspaudus mygtuką atsidaro tvarkingas meniu;
-- paspaudus meniu nuorodą arba už meniu ribų, meniu užsidaro.
+- telefone kainynas rodomas per visą plotį;
+- užsakymo forma rodoma po kainynu, ne šalia;
+- laukeliai telefone rodomi po vieną;
+- kainos ir tekstai nebesusispaudžia;
+- padidintas patogumas pildant formą telefone.
 
 Į GitHub pakeiskite:
 - index.html
