@@ -5,9 +5,9 @@ const drawerMenu = document.querySelector(".drawer-menu");
 if (menuButton && drawerMenu) {
   menuButton.addEventListener("click", event => {
     event.stopPropagation();
-    const isOpen = drawerMenu.classList.toggle("open");
-    menuButton.classList.toggle("open", isOpen);
-    menuButton.setAttribute("aria-expanded", String(isOpen));
+    const open = drawerMenu.classList.toggle("open");
+    menuButton.classList.toggle("open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
   });
 
   drawerMenu.querySelectorAll("a").forEach(link => {
