@@ -1,16 +1,13 @@
-NIUTE 2.1 – atnaujinta versija
+NIUTE 2.2 – nuotrauka įdėta tiesiai į svetainę
 
-Pakeitimai:
-- pašalinta žirklių iliustracija;
-- pridėta tikroviška siuvimo mašinos nuotrauka;
-- įrašytas telefonas +370 608 23342;
-- el. paštas pašalintas.
+Šioje versijoje siuvimo mašinos nuotrauka įdėta tiesiai į style.css.
+Nebereikia kelti assets aplanko.
 
-Į GitHub įkelkite:
+Į GitHub įkelkite tik:
 - index.html
 - style.css
 - script.js
-- assets aplanką su niute-siuvimo-masina.jpg
 - README.txt
 
-Cloudflare svetainę atnaujins automatiškai.
+Pakeiskite senus failus naujais ir paspauskite Commit changes.
+Cloudflare atsinaujins automatiškai.
