@@ -1,32 +1,10 @@
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-const menuButton = document.querySelector(".menu-button");
-const drawerMenu = document.querySelector(".drawer-menu");
-
-if (menuButton && drawerMenu) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = drawerMenu.classList.toggle("open");
-    menuButton.classList.toggle("open", isOpen);
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  drawerMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      drawerMenu.classList.remove("open");
-      menuButton.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  document.addEventListener("click", event => {
-    if (!drawerMenu.contains(event.target) && !menuButton.contains(event.target)) {
-      drawerMenu.classList.remove("open");
-      menuButton.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-    }
-  });
+const menuButton=document.querySelector('.menu-button');
+const nav=document.querySelector('.site-header nav');
+if(menuButton&&nav){
+menuButton.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 }
+document.getElementById("year").textContent = new Date().getFullYear();
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -44,13 +22,7 @@ const photoInput = document.getElementById("photoInput");
 const photoPreview = document.getElementById("photoPreview");
 const uploadStatus = document.getElementById("uploadStatus");
 
-function createOrderNumber() {
-  const now = new Date();
-  const pad = value => String(value).padStart(2, "0");
-  return `NI-${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
-}
-
-photoInput?.addEventListener("change", () => {
+photoInput.addEventListener("change", () => {
   const files = [...photoInput.files];
   photoPreview.innerHTML = "";
   uploadStatus.textContent = "";
@@ -101,13 +73,11 @@ async function uploadPhoto(file) {
   return result.secure_url;
 }
 
-document.getElementById("orderForm")?.addEventListener("submit", async event => {
+document.getElementById("orderForm").addEventListener("submit", async event => {
   event.preventDefault();
 
   const form = event.currentTarget;
   const message = document.getElementById("formMessage");
-  const confirmation = document.getElementById("orderConfirmation");
-  const confirmationNumber = document.getElementById("confirmationOrderNumber");
   const submitButton = form.querySelector('button[type="submit"]');
 
   if (!form.checkValidity()) {
@@ -115,13 +85,8 @@ document.getElementById("orderForm")?.addEventListener("submit", async event => 
     return;
   }
 
-  const orderNumber = createOrderNumber();
-  document.getElementById("orderNumberField").value = orderNumber;
-  document.getElementById("emailSubject").value = `Naujas NIUTE užsakymas – ${orderNumber}`;
-
   const files = [...photoInput.files];
   submitButton.disabled = true;
-  confirmation.hidden = true;
   message.className = "form-message";
   message.textContent = files.length ? "Įkeliamos nuotraukos..." : "Siunčiamas užsakymas...";
 
@@ -135,8 +100,6 @@ document.getElementById("orderForm")?.addEventListener("submit", async event => 
 
     const formData = new FormData(form);
     formData.delete("Nuotraukos");
-    formData.set("Užsakymo numeris", orderNumber);
-    formData.set("subject", `Naujas NIUTE užsakymas – ${orderNumber}`);
     formData.append(
       "Nuotraukų nuorodos",
       photoUrls.length
@@ -144,20 +107,16 @@ document.getElementById("orderForm")?.addEventListener("submit", async event => 
         : "Nuotraukos nepridėtos"
     );
 
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: formData
-    });
+    const response = await fetch(form.action, { method: "POST", body: formData });
     const result = await response.json();
 
     if (!response.ok || !result.success) {
       throw new Error(result.message || "Nepavyko išsiųsti užsakymo.");
     }
 
-    message.textContent = "";
-    confirmationNumber.textContent = `Užsakymo Nr. ${orderNumber}`;
-    confirmation.hidden = false;
-
+    const number = `NI-${new Date().getFullYear()}-${String(Math.floor(Math.random()*90000)+10000)}`;
+    message.className = "form-message success";
+    message.textContent = `Ačiū! Užsakymas išsiųstas. Užsakymo numeris: ${number}`;
     form.reset();
     photoPreview.innerHTML = "";
     uploadStatus.textContent = "";
