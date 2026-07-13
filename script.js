@@ -1,9 +1,32 @@
-const menuButton=document.querySelector('.menu-button');
-const nav=document.querySelector('.site-header nav');
-if(menuButton&&nav){
-menuButton.addEventListener('click',()=>nav.classList.toggle('open'));
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const menuButton = document.querySelector(".menu-button");
+const drawerMenu = document.querySelector(".drawer-menu");
+
+if (menuButton && drawerMenu) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = drawerMenu.classList.toggle("open");
+    menuButton.classList.toggle("open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  drawerMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      drawerMenu.classList.remove("open");
+      menuButton.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("click", event => {
+    if (!drawerMenu.contains(event.target) && !menuButton.contains(event.target)) {
+      drawerMenu.classList.remove("open");
+      menuButton.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  });
 }
+
+
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const observer = new IntersectionObserver(entries => {
