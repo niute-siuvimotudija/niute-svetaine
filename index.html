@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4.1">
 </head>
 <body>
 <header class="site-header">
@@ -18,7 +18,17 @@
       <span>NIUTE</span>
       <small>SIUVIMO STUDIJA</small>
     </a>
-    
+    <button class="menu-button" type="button" aria-label="Atverti meniu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="drawer-menu" aria-label="Pagrindinis meniu">
+      <a href="#paslaugos">Paslaugos</a>
+      <a href="#kainos">Kainos</a>
+      <a href="#kaip-veikia">Kaip tai veikia</a>
+      <a href="#apie">Apie</a>
+      <a href="#duk">DUK</a>
+      <a href="#kontaktai">Kontaktai</a>
+    </nav>
   </div>
 </header>
 
@@ -115,7 +125,8 @@
 
       <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="f983f3ed-9561-46b5-b702-f2890b584e45">
-        <input type="hidden" name="subject" value="Naujas NIUTE užsakymas">
+        <input type="hidden" id="emailSubject" name="subject" value="Naujas NIUTE užsakymas">
+        <input type="hidden" id="orderNumberField" name="Užsakymo numeris" value="">
         <input type="hidden" name="from_name" value="NIUTE svetainė">
         <input type="checkbox" name="botcheck" class="hidden-botcheck" tabindex="-1" autocomplete="off">
 
@@ -177,6 +188,11 @@
 
         <button class="button button-dark full" type="submit">Pateikti užsakymą</button>
         <p id="formMessage" class="form-message" aria-live="polite"></p>
+        <div id="orderConfirmation" class="order-confirmation" hidden>
+          <strong>Ačiū! Jūsų užsakymas sėkmingai gautas.</strong>
+          <span id="confirmationOrderNumber"></span>
+          <small>Užsakymo numerį išsaugokite, jei reikėtų susisiekti.</small>
+        </div>
       </form>
     </div>
   </div>
@@ -201,6 +217,41 @@
   </div>
 </section>
 
+
+<section id="duk" class="section soft">
+  <div class="container faq-wrap">
+    <div class="section-heading center reveal">
+      <p class="eyebrow">DUK</p>
+      <h2>Dažniausiai užduodami klausimai</h2>
+    </div>
+
+    <details class="reveal">
+      <summary>Ar priimate siuntas iš visos Lietuvos?</summary>
+      <p>Taip. Dirbame nuotoliniu būdu ir priimame siuntas iš visos Lietuvos.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Kiek laiko trunka taisymas?</summary>
+      <p>Dažniausiai 3–7 darbo dienas. Sudėtingesni darbai gali užtrukti iki 14 darbo dienų.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Kada sužinosiu galutinę kainą?</summary>
+      <p>Galutinę kainą patvirtiname apžiūrėję drabužį. Darbų nepradedame be Jūsų sutikimo.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Kas apmoka siuntimą?</summary>
+      <p>Klientas apmoka siuntimą ir grąžinimą.</p>
+    </details>
+
+    <details class="reveal">
+      <summary>Ar galiu pridėti drabužio nuotraukas?</summary>
+      <p>Taip. Užsakymo formoje galima pridėti iki 3 nuotraukų.</p>
+    </details>
+  </div>
+</section>
+
 <section id="kontaktai" class="section contact-section">
   <div class="container contact-wrap reveal">
     <div>
@@ -221,6 +272,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=4.1"></script>
 </body>
 </html>
