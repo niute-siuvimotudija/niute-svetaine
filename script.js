@@ -2,7 +2,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const menuButton = document.querySelector(".menu-button");
 const nav = document.querySelector(".site-header nav");
-
 menuButton.addEventListener("click", () => nav.classList.toggle("open"));
 document.querySelectorAll(".site-header nav a").forEach(link => {
   link.addEventListener("click", () => nav.classList.remove("open"));
@@ -12,8 +11,7 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add("visible");
   });
-}, { threshold: 0.12 });
-
+}, { threshold: 0.1 });
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
 const CLOUDINARY_CLOUD_NAME = "jrberzhn";
@@ -27,10 +25,9 @@ const uploadStatus = document.getElementById("uploadStatus");
 
 photoInput.addEventListener("change", () => {
   const files = [...photoInput.files];
-
   photoPreview.innerHTML = "";
-  uploadStatus.className = "upload-status";
   uploadStatus.textContent = "";
+  uploadStatus.className = "upload-status";
 
   if (files.length > MAX_PHOTOS) {
     photoInput.value = "";
@@ -52,7 +49,7 @@ photoInput.addEventListener("change", () => {
     item.className = "photo-preview-item";
     const image = document.createElement("img");
     image.src = URL.createObjectURL(file);
-    image.alt = "Pasirinktos drabužio nuotraukos peržiūra";
+    image.alt = "Pasirinkta drabužio nuotrauka";
     image.onload = () => URL.revokeObjectURL(image.src);
     item.appendChild(image);
     photoPreview.appendChild(item);
@@ -71,11 +68,9 @@ async function uploadPhoto(file) {
   );
 
   const result = await response.json();
-
   if (!response.ok || !result.secure_url) {
     throw new Error(result.error?.message || "Nepavyko įkelti nuotraukos.");
   }
-
   return result.secure_url;
 }
 
@@ -92,54 +87,37 @@ document.getElementById("orderForm").addEventListener("submit", async event => {
   }
 
   const files = [...photoInput.files];
-
-  if (files.length > MAX_PHOTOS) {
-    uploadStatus.className = "upload-status error";
-    uploadStatus.textContent = "Galima įkelti ne daugiau kaip 3 nuotraukas.";
-    return;
-  }
-
   submitButton.disabled = true;
-  message.className = "form-message loading";
+  message.className = "form-message";
   message.textContent = files.length ? "Įkeliamos nuotraukos..." : "Siunčiamas užsakymas...";
 
   try {
     let photoUrls = [];
-
     if (files.length) {
       photoUrls = await Promise.all(files.map(uploadPhoto));
       uploadStatus.className = "upload-status success";
       uploadStatus.textContent = "Nuotraukos sėkmingai įkeltos.";
-      message.textContent = "Siunčiamas užsakymas...";
     }
 
     const formData = new FormData(form);
     formData.delete("Nuotraukos");
+    formData.append(
+      "Nuotraukų nuorodos",
+      photoUrls.length
+        ? photoUrls.map((url, i) => `${i + 1}. ${url}`).join("\n")
+        : "Nuotraukos nepridėtos"
+    );
 
-    if (photoUrls.length) {
-      formData.append(
-        "Nuotraukų nuorodos",
-        photoUrls.map((url, index) => `${index + 1}. ${url}`).join("\\n")
-      );
-    } else {
-      formData.append("Nuotraukų nuorodos", "Nuotraukos nepridėtos");
-    }
-
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: formData
-    });
-
+    const response = await fetch(form.action, { method: "POST", body: formData });
     const result = await response.json();
 
     if (!response.ok || !result.success) {
       throw new Error(result.message || "Nepavyko išsiųsti užsakymo.");
     }
 
-    const number = `NI-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 90000) + 10000)}`;
-    message.className = "form-message";
-    message.textContent = `Ačiū! Užsakymas išsiųstas. Jūsų užsakymo numeris: ${number}`;
-
+    const number = `NI-${new Date().getFullYear()}-${String(Math.floor(Math.random()*90000)+10000)}`;
+    message.className = "form-message success";
+    message.textContent = `Ačiū! Užsakymas išsiųstas. Užsakymo numeris: ${number}`;
     form.reset();
     photoPreview.innerHTML = "";
     uploadStatus.textContent = "";
