@@ -1,12 +1,5 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const menuButton = document.querySelector(".menu-button");
-const nav = document.querySelector(".site-header nav");
-menuButton.addEventListener("click", () => nav.classList.toggle("open"));
-document.querySelectorAll(".site-header nav a").forEach(link => {
-  link.addEventListener("click", () => nav.classList.remove("open"));
-});
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add("visible");

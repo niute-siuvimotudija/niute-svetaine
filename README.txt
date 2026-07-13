@@ -1,20 +1,13 @@
-NIUTE 3.0 – naujas prabangus dizainas
+NIUTE 3.1 – supaprastintas viršus
 
-Šioje versijoje:
-- naujas hero viršelis pagal pasirinktą maketą;
-- tikroviškas siuvimo studijos vaizdas įdėtas tiesiai į puslapį;
-- telefonas +370 608 23342;
-- el. paštas svetainėje viešai nerodomas;
-- kliento el. pašto laukelis užsakymo formoje;
-- Web3Forms užsakymų siuntimas į linakatiliu@gmail.com;
-- Cloudinary nuotraukų įkėlimas iki 3 failų;
-- tekstai pakoreguoti pagal paskutinius pageidavimus;
-- švarko taisymo paslauga pašalinta.
+Pakeitimai:
+- pašalinti viršutinio meniu užrašai;
+- pašalintas mobilus meniu mygtukas;
+- viršuje paliktas NIUTE logotipas ir mygtukas „Užsakyti“;
+- likusios svetainės funkcijos nepakeistos.
 
-Į GitHub įkelkite ir pakeiskite:
+Į GitHub pakeiskite:
 - index.html
 - style.css
 - script.js
 - README.txt
-
-Po Commit changes Cloudflare automatiškai atnaujins svetainę.
