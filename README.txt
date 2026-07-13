@@ -1,14 +1,16 @@
-NIUTE 2.0 – GitHub failai
+NIUTE 2.1 – atnaujinta versija
 
-1. Išarchyvuokite ZIP failą.
-2. GitHub repozitorijoje ištrinkite senus index.html, style.css ir README.txt failus arba įkelkite naujus virš jų.
-3. Įkelkite:
-   - index.html
-   - style.css
-   - script.js
-   - README.txt
-4. Paspauskite Commit changes.
-5. Cloudflare automatiškai atnaujins svetainę per kelias minutes.
+Pakeitimai:
+- pašalinta žirklių iliustracija;
+- pridėta tikroviška siuvimo mašinos nuotrauka;
+- įrašytas telefonas +370 608 23342;
+- el. paštas pašalintas.
 
-Svarbu:
-Užsakymo forma šiuo metu yra demonstracinė ir nesiunčia duomenų el. paštu.
+Į GitHub įkelkite:
+- index.html
+- style.css
+- script.js
+- assets aplanką su niute-siuvimo-masina.jpg
+- README.txt
+
+Cloudflare svetainę atnaujins automatiškai.
