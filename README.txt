@@ -1,16 +1,10 @@
-NIUTE 5.0 FINAL
+NIUTE 5.0.1
 
 Pakeitimai:
-- naujas švarus viršelio fonas be įkeptų tekstų;
-- naujas pagrindinis tekstas ir mygtukas;
-- minimalistinis hamburgerio meniu;
-- klientų atsiliepimų skiltis;
-- „Kodėl verta rinktis NIUTE?“ skiltis;
-- info@niute.lt ir niute.lt kontaktuose;
-- privatumo pastaba prie užsakymo formos;
-- favicon ir SEO pagrindai;
-- nėra darbų nuotraukų galerijos.
+- pašalinta klientų atsiliepimų skiltis;
+- pašalinta meniu nuoroda „Atsiliepimai“;
+- pašalintas didelis telefono numeris iš kontaktų bloko;
+- mažesnis telefono numeris galutiniuose kontaktuose ir poraštėje paliktas;
+- užsakymo forma ir el. pašto veikimas nepakeisti.
 
-Web3Forms gavėjas jau nustatytas į info@niute.lt paskyroje.
-
-Į GitHub pakeiskite: index.html, style.css, script.js, README.txt.
+Į GitHub pakeiskite visus 4 failus.
