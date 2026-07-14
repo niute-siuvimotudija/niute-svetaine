@@ -1,14 +1,38 @@
 
-const menuButton=document.querySelector(".menu-button");
-const drawerMenu=document.querySelector(".drawer-menu");
-if(menuButton&&drawerMenu){
-menuButton.addEventListener("click",e=>{e.stopPropagation();const o=drawerMenu.classList.toggle("open");menuButton.classList.toggle("open",o);menuButton.setAttribute("aria-expanded",String(o));});
-drawerMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{drawerMenu.classList.remove("open");menuButton.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}));
-document.addEventListener("click",e=>{if(!drawerMenu.contains(e.target)&&!menuButton.contains(e.target)){drawerMenu.classList.remove("open");menuButton.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}});
-}
-
 document.getElementById("year").textContent = new Date().getFullYear();
 
+const menuButton = document.querySelector(".menu-button");
+const drawerMenu = document.querySelector(".drawer-menu");
+
+if (menuButton && drawerMenu) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = drawerMenu.classList.toggle("open");
+    menuButton.classList.toggle("open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  drawerMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      drawerMenu.classList.remove("open");
+      menuButton.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("click", event => {
+    if (!drawerMenu.contains(event.target) && !menuButton.contains(event.target)) {
+      drawerMenu.classList.remove("open");
+      menuButton.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.1 });
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
 const CLOUDINARY_CLOUD_NAME = "jrberzhn";
@@ -145,4 +169,32 @@ document.getElementById("orderForm")?.addEventListener("submit", async event => 
   } finally {
     submitButton.disabled = false;
   }
+});
+
+// NIUTE 5.0 – darbų galerijos peržiūra
+const workModal = document.getElementById("workModal");
+const workModalTitle = document.getElementById("workModalTitle");
+const workModalClose = document.querySelector(".work-modal-close");
+
+document.querySelectorAll(".work-photo").forEach(button => {
+  button.addEventListener("click", () => {
+    if (!workModal) return;
+    workModalTitle.textContent = button.dataset.title || "Atliktas darbas";
+    workModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeWorkModal(){
+  if (!workModal) return;
+  workModal.hidden = true;
+  document.body.style.overflow = "";
+}
+
+workModalClose?.addEventListener("click", closeWorkModal);
+workModal?.addEventListener("click", event => {
+  if (event.target === workModal) closeWorkModal();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeWorkModal();
 });

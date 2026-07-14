@@ -316,27 +316,133 @@ footer{padding:28px 0;background:#211c18;color:#e9ded4}.footer-wrap{display:flex
   }
 }
 
-.site-header{position:absolute!important;inset:0 0 auto 0;z-index:1000;background:transparent!important;color:#fff}
-.site-header .nav-wrap{min-height:76px;display:flex!important;align-items:center;justify-content:space-between}
-.site-header .logo{display:flex!important;flex-direction:column;text-decoration:none;z-index:1002}
-.site-header .logo span{color:#fff;font-family:"Playfair Display",serif;font-size:2rem;letter-spacing:.14em}
-.site-header .logo small{color:#fff;margin-top:7px;font-size:.56rem;letter-spacing:.2em}
-.site-header .menu-button{display:flex!important;width:46px;height:46px;padding:0;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(255,255,255,.68);border-radius:50%;background:rgba(25,20,17,.48);cursor:pointer;z-index:1002}
-.site-header .menu-button span{display:block!important;width:21px;height:2px;background:#fff}
-.site-header .menu-button.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.site-header .menu-button.open span:nth-child(2){opacity:0}
-.site-header .menu-button.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.site-header .drawer-menu{display:none!important;position:absolute;top:66px;right:18px;min-width:225px;padding:15px;border-radius:14px;background:rgba(31,25,21,.98);box-shadow:0 20px 55px rgba(0,0,0,.4);flex-direction:column;z-index:1001}
-.site-header .drawer-menu.open{display:flex!important}
-.site-header .drawer-menu a{display:block;padding:13px 14px;border-radius:8px;color:#fff;text-decoration:none;font-size:.95rem;text-transform:none}
-.site-header nav:not(.open){display:none!important}
-.hero{min-height:720px!important;background-size:cover!important;background-position:center!important}
-.hero-overlay{background:linear-gradient(90deg,rgba(20,15,12,.72),rgba(20,15,12,.26) 62%,rgba(20,15,12,.08))!important}
-.hero-content{display:block!important;opacity:1!important;transform:none!important;max-width:680px!important;padding-top:105px!important}
-.hero h1,.hero-title{display:block!important;color:#fff!important}
-.hero .button{display:inline-flex!important}
+/* NIUTE 5.0 – atlikti darbai ir atsiliepimai */
+.niute-gallery-section{background:#fffdf9}
+.niute-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.work-card{
+  margin:0;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 12px 34px rgba(54,39,29,.08);
+}
+.work-photo{
+  width:100%;
+  aspect-ratio:4/3;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  border:0;
+  background:
+    linear-gradient(135deg,rgba(184,149,111,.2),rgba(244,238,231,.85)),
+    repeating-linear-gradient(45deg,transparent,transparent 14px,rgba(141,93,55,.05) 14px,rgba(141,93,55,.05) 28px);
+  color:#7d624b;
+  cursor:pointer;
+}
+.work-photo span{
+  padding:10px 14px;
+  border:1px solid rgba(125,98,75,.35);
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  font-weight:700;
+}
+.work-card figcaption{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:17px 18px 19px;
+}
+.work-card figcaption small{color:var(--muted)}
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.testimonial-card{
+  margin:0;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 12px 34px rgba(54,39,29,.07);
+}
+.testimonial-card .stars{
+  color:#a97849;
+  letter-spacing:.15em;
+  font-size:1.05rem;
+}
+.testimonial-card p{
+  font-family:"Playfair Display",serif;
+  font-size:1.16rem;
+  line-height:1.55;
+}
+.testimonial-card footer{
+  color:var(--muted);
+  font-size:.9rem;
+  font-weight:700;
+}
+.work-modal{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(24,18,14,.82);
+}
+.work-modal[hidden]{display:none}
+.work-modal-content{
+  width:min(720px,100%);
+  padding:20px;
+  border-radius:16px;
+  background:#fffdf9;
+  text-align:center;
+}
+.work-modal-placeholder{
+  min-height:360px;
+  display:grid;
+  place-items:center;
+  margin-bottom:15px;
+  border-radius:11px;
+  background:linear-gradient(135deg,#eadaca,#f8f2ec);
+  color:#7d624b;
+  font-weight:700;
+}
+.work-modal-close{
+  position:fixed;
+  top:18px;
+  right:20px;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:50%;
+  background:rgba(0,0,0,.35);
+  color:#fff;
+  font-size:1.8rem;
+  cursor:pointer;
+}
+@media(max-width:850px){
+  .niute-gallery{grid-template-columns:repeat(2,1fr)}
+  .testimonial-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .niute-gallery{grid-template-columns:1fr}
+  .work-modal-placeholder{min-height:260px}
+}
+
+/* NIUTE 5.0 – švaresnis, šviesesnis hero vaizdas */
+.hero{
+  background-size:cover!important;
+  background-position:center!important;
+}
+.hero-overlay{
+  background:linear-gradient(90deg,rgba(22,16,12,.68),rgba(22,16,12,.24) 64%,rgba(22,16,12,.08))!important;
+}
 @media(max-width:650px){
-.site-header .nav-wrap{min-height:68px}.site-header .logo span{font-size:1.72rem}.site-header .logo small{display:none!important}.site-header .menu-button{width:43px;height:43px}
-.site-header .drawer-menu{top:60px;left:18px;right:18px;min-width:0}
-.hero{min-height:760px!important;background-position:68% center!important}.hero-content{padding-top:115px!important;max-width:90%!important}
-.hero h1{font-size:clamp(4.2rem,22vw,6.5rem)!important}.hero-title{font-size:clamp(2rem,10vw,3rem)!important;line-height:1.12!important}}
+  .hero{background-position:66% center!important}
+}
