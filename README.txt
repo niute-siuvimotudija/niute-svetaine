@@ -34,4 +34,7 @@ Naudok tik naują raktą ir jo niekam nesiųsk.
 PATIKRINIMAS
 Atidaryk niute.lt, pateik bandomąjį užsakymą ir patikrink:
 - info@niute.lt gauna užsakymą;
-- kliento el. paštas gauna patvirtinimą. 
+- kliento el. paštas gauna patvirtinimą.
+
+
+NIUTE 5.3: pridėta akcija „Pirmiesiems 50 klientų –20 % nuolaida“ viršuje ir prie užsakymo formos.

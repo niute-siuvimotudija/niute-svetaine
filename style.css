@@ -341,3 +341,15 @@ footer{padding:28px 0;background:#211c18;color:#e9ded4}.footer-wrap{display:flex
  .why-grid{grid-template-columns:1fr}
  .final-contact-inner{flex-direction:column;align-items:center;gap:12px}
 }
+
+
+/* NIUTE 5.3 – pirmųjų 50 klientų akcija */
+.promo-bar{background:#9b6a35;color:#fff;text-align:center;position:relative;z-index:30}
+.promo-bar a{max-width:1180px;margin:auto;min-height:48px;padding:10px 22px;display:flex;align-items:center;justify-content:center;gap:18px;color:inherit;text-decoration:none;font-size:.93rem;letter-spacing:.02em}
+.promo-bar strong{font-weight:700}
+.promo-bar span{font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;border-bottom:1px solid rgba(255,255,255,.65)}
+.promo-card{margin:22px 0 26px;padding:22px 24px;border:1px solid #b58a5a;background:#fbf5ed;text-align:center}
+.promo-card-label{display:block;margin-bottom:8px;color:#9b6a35;font-size:.72rem;font-weight:700;letter-spacing:.18em}
+.promo-card strong{display:block;font-family:"Playfair Display",serif;color:#30251e;font-size:clamp(1.35rem,3.8vw,1.85rem);line-height:1.25}
+.promo-card p{margin:9px auto 0;max-width:560px;color:#6e5e52;font-size:.9rem;line-height:1.55}
+@media(max-width:680px){.promo-bar a{min-height:54px;flex-direction:column;gap:2px;padding:8px 12px}.promo-bar strong{font-size:.92rem}.promo-bar span{font-size:.68rem}.promo-card{padding:19px 16px}}
