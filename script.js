@@ -144,9 +144,15 @@ document.getElementById("orderForm")?.addEventListener("submit", async event => 
         : "Nuotraukos nepridėtos"
     );
 
+    const payload = {};
+    for (const [key, value] of formData.entries()) {
+      payload[key] = value;
+    }
+
     const response = await fetch(form.action, {
       method: "POST",
-      body: formData
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
     });
     const result = await response.json();
 

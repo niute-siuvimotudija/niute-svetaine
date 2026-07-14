@@ -1,15 +1,37 @@
-NIUTE 5.1 – Cloudflare Worker + Resend
+NIUTE 5.2 FINAL – Cloudflare Pages Functions + Resend
 
-Ši versija siunčia užsakymą į info@niute.lt ir automatinį patvirtinimą klientui.
+KAS PAKEISTA
+- Pašalintas viešas Web3Forms access_key.
+- Užsakymo forma dabar siunčia duomenis į /api/order.
+- Cloudinary nuotraukų įkėlimas paliktas.
+- Tu gauni užsakymą į info@niute.lt.
+- Klientas gauna automatinį patvirtinimo laišką su užsakymo numeriu.
 
-SVARBU: pokalbyje parodytas Resend API raktas turi būti panaikintas. Sukurkite naują raktą ir jo niekam nesiųskite.
+KAIP ĮKELTI Į GITHUB
+Į repozitorijos pagrindą įkelk:
+- index.html
+- style.css
+- script.js
+- README.txt
+- visą functions aplanką (functions/api/order.js)
 
-Įkėlimas į GitHub:
-1. Ištrinkite senus repozitorijos failus arba pakeiskite juos visais šio ZIP failais.
-2. GitHub šaknyje turi būti worker.js, wrangler.jsonc, package.json ir aplankas public.
-3. Cloudflare paleiskite naują deployment iš GitHub.
-4. Po deployment projekto Settings skiltyje jau bus galima pridėti Secret:
-   Name: RESEND_API_KEY
-   Value: naujas Resend API raktas.
-5. Išsaugokite ir paleiskite Deploy dar kartą.
-6. Patikrinkite užsakymo formą adresu niute.lt.
+SVARBU: GitHub turi matytis būtent toks kelias:
+functions/api/order.js
+
+CLOUDFLARE NUSTATYMAS
+Kai Cloudflare sėkmingai aptiks Functions:
+1. Workers & Pages → niute-svetaine → Settings.
+2. Variables and secrets → Add.
+3. Name: RESEND_API_KEY
+4. Type: Secret
+5. Value: naujas Resend API raktas.
+6. Save ir paleisk naują deployment.
+
+SAUGUMAS
+Anksčiau pokalbyje parodytą Resend API raktą būtina Revoke/Delete.
+Naudok tik naują raktą ir jo niekam nesiųsk.
+
+PATIKRINIMAS
+Atidaryk niute.lt, pateik bandomąjį užsakymą ir patikrink:
+- info@niute.lt gauna užsakymą;
+- kliento el. paštas gauna patvirtinimą.
