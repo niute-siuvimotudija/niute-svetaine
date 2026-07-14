@@ -1,32 +1,11 @@
 
-const menuButton = document.querySelector(".menu-button");
-const drawerMenu = document.querySelector(".drawer-menu");
-
-if (menuButton && drawerMenu) {
-  menuButton.addEventListener("click", event => {
-    event.stopPropagation();
-    const open = drawerMenu.classList.toggle("open");
-    menuButton.classList.toggle("open", open);
-    menuButton.setAttribute("aria-expanded", String(open));
-  });
-
-  drawerMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      drawerMenu.classList.remove("open");
-      menuButton.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  document.addEventListener("click", event => {
-    if (!drawerMenu.contains(event.target) && !menuButton.contains(event.target)) {
-      drawerMenu.classList.remove("open");
-      menuButton.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-    }
-  });
+const menuButton=document.querySelector(".menu-button");
+const drawerMenu=document.querySelector(".drawer-menu");
+if(menuButton&&drawerMenu){
+menuButton.addEventListener("click",e=>{e.stopPropagation();const o=drawerMenu.classList.toggle("open");menuButton.classList.toggle("open",o);menuButton.setAttribute("aria-expanded",String(o));});
+drawerMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{drawerMenu.classList.remove("open");menuButton.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}));
+document.addEventListener("click",e=>{if(!drawerMenu.contains(e.target)&&!menuButton.contains(e.target)){drawerMenu.classList.remove("open");menuButton.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}});
 }
-
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
