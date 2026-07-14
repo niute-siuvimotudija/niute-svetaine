@@ -1,7 +1,16 @@
 NIUTE 5.0 FINAL
 
-Pridėta: atsiliepimai, „Kodėl verta rinktis NIUTE“, info@niute.lt, niute.lt, privatumo pastaba, favicon ir SEO. Darbų galerija neįdėta. Užsakymo formos logika ir nuotraukų įkėlimas išsaugoti.
+Pakeitimai:
+- naujas švarus viršelio fonas be įkeptų tekstų;
+- naujas pagrindinis tekstas ir mygtukas;
+- minimalistinis hamburgerio meniu;
+- klientų atsiliepimų skiltis;
+- „Kodėl verta rinktis NIUTE?“ skiltis;
+- info@niute.lt ir niute.lt kontaktuose;
+- privatumo pastaba prie užsakymo formos;
+- favicon ir SEO pagrindai;
+- nėra darbų nuotraukų galerijos.
 
-Svarbu: Web3Forms gavėjas valdomas Web3Forms paskyroje. Kad užsakymai realiai eitų į info@niute.lt, Web3Forms paskyroje pakeisk gavėjo adresą arba sukurk naują Access Key, susietą su info@niute.lt.
+Web3Forms gavėjas jau nustatytas į info@niute.lt paskyroje.
 
-Į GitHub įkelk index.html, style.css, script.js ir README.txt.
+Į GitHub pakeiskite: index.html, style.css, script.js, README.txt.

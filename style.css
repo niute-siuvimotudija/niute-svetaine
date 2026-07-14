@@ -317,4 +317,29 @@ footer{padding:28px 0;background:#211c18;color:#e9ded4}.footer-wrap{display:flex
 }
 
 /* NIUTE 5.0 FINAL */
-.site-header .drawer-menu{display:none!important}.site-header .drawer-menu.open{display:flex!important}.site-header nav:not(.open){display:none!important}.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.testimonial-card{margin:0;padding:28px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 14px 40px rgba(55,39,28,.08)}.stars{color:#a97849;letter-spacing:.14em}.testimonial-card p{font-family:"Playfair Display",serif;font-size:1.14rem;line-height:1.55}.testimonial-card footer{color:var(--muted);font-size:.9rem;font-weight:700}.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.why-card{padding:24px 20px;border-top:3px solid #9c7552;background:#fff;box-shadow:0 12px 34px rgba(55,39,28,.06)}.why-card span{color:#9c7552;font-weight:800}.why-card p{color:var(--muted);font-size:.9rem}.privacy-note{margin:12px 0 16px;padding:12px 14px;border-radius:7px;background:#f4eee7;color:#66584d;font-size:.86rem}@media(max-width:1000px){.why-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:850px){.testimonial-grid{grid-template-columns:1fr}}@media(max-width:650px){.why-grid{grid-template-columns:1fr}}
+.hero{min-height:720px!important;background-position:center!important;background-size:cover!important}
+.hero-overlay{background:linear-gradient(90deg,rgba(28,20,16,.76),rgba(28,20,16,.30) 60%,rgba(28,20,16,.08))!important}
+.hero-content{max-width:700px!important;padding-top:105px!important;opacity:1!important;transform:none!important}
+.hero-title{max-width:680px!important;font-size:clamp(2.35rem,5vw,4.5rem)!important;line-height:1.08!important}
+.hero-subtitle{max-width:590px;margin:0 0 28px;color:rgba(255,255,255,.88);font-size:1.02rem;line-height:1.7}
+.site-header nav:not(.open){display:none!important}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testimonial-card{margin:0;padding:30px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 15px 38px rgba(52,37,27,.08)}
+.stars{color:#a97849;letter-spacing:.14em}.testimonial-card p{font-family:"Playfair Display",serif;font-size:1.16rem;line-height:1.55}.testimonial-card footer{color:var(--muted);font-weight:700;font-size:.9rem}
+.section-note{max-width:620px;margin-inline:auto;color:var(--muted)}
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.why-card{padding:26px 20px;border-top:3px solid #9b7452;background:#fff;box-shadow:0 12px 32px rgba(52,37,27,.06)}
+.why-card span{color:#9b7452;font-weight:800}.why-card h3{font-size:1rem}.why-card p{color:var(--muted);font-size:.9rem;line-height:1.55}
+.privacy-note{margin:12px 0 16px;padding:12px 14px;border-radius:8px;background:#f4eee7;color:#67594e;font-size:.86rem}
+.final-contact{background:#30251e;color:#fff}.final-contact-inner{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}.final-contact a{color:#fff;text-decoration:none;font-weight:600}
+@media(max-width:1000px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:850px){.testimonial-grid{grid-template-columns:1fr}}
+@media(max-width:650px){
+ .hero{min-height:760px!important;background-position:70% center!important}
+ .hero-content{padding-top:112px!important;max-width:92%!important}
+ .hero h1{font-size:clamp(4.2rem,21vw,6.5rem)!important}
+ .hero-title{font-size:clamp(2rem,9.6vw,3rem)!important}
+ .hero-subtitle{font-size:.96rem;line-height:1.6}
+ .why-grid{grid-template-columns:1fr}
+ .final-contact-inner{flex-direction:column;align-items:center;gap:12px}
+}
