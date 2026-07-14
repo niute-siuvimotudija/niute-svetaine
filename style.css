@@ -353,3 +353,6 @@ footer{padding:28px 0;background:#211c18;color:#e9ded4}.footer-wrap{display:flex
 .promo-card strong{display:block;font-family:"Playfair Display",serif;color:#30251e;font-size:clamp(1.35rem,3.8vw,1.85rem);line-height:1.25}
 .promo-card p{margin:9px auto 0;max-width:560px;color:#6e5e52;font-size:.9rem;line-height:1.55}
 @media(max-width:680px){.promo-bar a{min-height:54px;flex-direction:column;gap:2px;padding:8px 12px}.promo-bar strong{font-size:.92rem}.promo-bar span{font-size:.68rem}.promo-card{padding:19px 16px}}
+
+.promo-banner{position:sticky;top:0;z-index:9999;background:#3F352D;color:#fff;text-align:center;padding:11px 12px;font-size:14px;font-weight:500}
+.promo-hero{margin:18px 0 24px;font-size:1.1rem}
