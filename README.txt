@@ -1,21 +1,7 @@
-NIUTE 5.0
+NIUTE 5.0 FINAL
 
-Sukurta iš tavo įkelto veikiančio NIUTE 4.0 projekto.
+Pridėta: atsiliepimai, „Kodėl verta rinktis NIUTE“, info@niute.lt, niute.lt, privatumo pastaba, favicon ir SEO. Darbų galerija neįdėta. Užsakymo formos logika ir nuotraukų įkėlimas išsaugoti.
 
-Pridėta:
-- šviesesnis ir švaresnis viršelio fonas be įkeptų užrašų;
-- skiltis „Atlikti darbai“ su 6 vietomis tavo nuotraukoms;
-- paspaudus darbų kortelę atsidaro didesnė peržiūra;
-- skiltis „Klientų atsiliepimai“ su 3 pavyzdinėmis kortelėmis;
-- naujos skiltys pritaikytos telefonams;
-- užsakymo forma, nuotraukų įkėlimas ir el. pašto siuntimas nepakeisti.
+Svarbu: Web3Forms gavėjas valdomas Web3Forms paskyroje. Kad užsakymai realiai eitų į info@niute.lt, Web3Forms paskyroje pakeisk gavėjo adresą arba sukurk naują Access Key, susietą su info@niute.lt.
 
-Kaip vėliau įkelti savo darbų nuotraukas:
-šioje versijoje paliktos tvarkingos vietos rezervavimo kortelės. Kai turėsi nuotraukas,
-įkelk jas į pokalbį ir bus paruošta versija su tikromis nuotraukomis.
-
-Į GitHub pakeisk:
-- index.html
-- style.css
-- script.js
-- README.txt
+Į GitHub įkelk index.html, style.css, script.js ir README.txt.
