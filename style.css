@@ -343,16 +343,82 @@ footer{padding:28px 0;background:#211c18;color:#e9ded4}.footer-wrap{display:flex
 }
 
 
-/* NIUTE 5.3 – pirmųjų 50 klientų akcija */
-.promo-bar{background:#9b6a35;color:#fff;text-align:center;position:relative;z-index:30}
-.promo-bar a{max-width:1180px;margin:auto;min-height:48px;padding:10px 22px;display:flex;align-items:center;justify-content:center;gap:18px;color:inherit;text-decoration:none;font-size:.93rem;letter-spacing:.02em}
-.promo-bar strong{font-weight:700}
-.promo-bar span{font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;border-bottom:1px solid rgba(255,255,255,.65)}
-.promo-card{margin:22px 0 26px;padding:22px 24px;border:1px solid #b58a5a;background:#fbf5ed;text-align:center}
-.promo-card-label{display:block;margin-bottom:8px;color:#9b6a35;font-size:.72rem;font-weight:700;letter-spacing:.18em}
-.promo-card strong{display:block;font-family:"Playfair Display",serif;color:#30251e;font-size:clamp(1.35rem,3.8vw,1.85rem);line-height:1.25}
-.promo-card p{margin:9px auto 0;max-width:560px;color:#6e5e52;font-size:.9rem;line-height:1.55}
-@media(max-width:680px){.promo-bar a{min-height:54px;flex-direction:column;gap:2px;padding:8px 12px}.promo-bar strong{font-size:.92rem}.promo-bar span{font-size:.68rem}.promo-card{padding:19px 16px}}
-
-.promo-banner{position:sticky;top:0;z-index:9999;background:#3F352D;color:#fff;text-align:center;padding:11px 12px;font-size:14px;font-weight:500}
-.promo-hero{margin:18px 0 24px;font-size:1.1rem}
+/* NIUTE 6.0 – elegantiškas ateljė dizainas */
+:root{
+  --paper:#f7f3ed;
+  --soft:#eee7de;
+  --ink:#28211d;
+  --muted:#746960;
+  --line:#d9cec1;
+  --accent:#9a7657;
+  --dark:#28211d;
+}
+body{background:var(--paper)}
+.section{padding:110px 0}
+.section-tight{padding:64px 0}
+.site-header{position:absolute;top:0}
+.nav-wrap{min-height:96px}
+.logo span{font-size:2.2rem;letter-spacing:.18em}
+.menu-button{background:rgba(31,25,21,.28);border-color:rgba(255,255,255,.6)}
+.hero{min-height:790px!important;background-position:67% center!important}
+.hero-overlay{background:linear-gradient(90deg,rgba(25,19,16,.86) 0%,rgba(25,19,16,.58) 42%,rgba(25,19,16,.12) 78%)!important}
+.hero-content{padding-top:120px!important;max-width:760px!important}
+.hero h1{font-size:clamp(5rem,10vw,9rem);letter-spacing:.15em;line-height:.9;margin-bottom:28px}
+.hero-title{font-size:clamp(2.1rem,4.4vw,4.15rem)!important;max-width:720px!important;margin:24px 0 20px}
+.hero-subtitle{max-width:560px;font-size:1.05rem}
+.hero-trust{margin:20px 0 0;color:rgba(255,255,255,.72);font-size:.79rem;letter-spacing:.04em}
+.button{border-radius:0;padding:15px 24px;letter-spacing:.06em;text-transform:uppercase;font-size:.78rem}
+.button-light{background:#f5eee5;color:#2c241f;border:1px solid #f5eee5}
+.button-light:hover{background:transparent;color:#fff}
+.values{position:relative;margin-top:-42px;z-index:3;background:transparent}
+.values-grid{background:#fff;box-shadow:0 24px 70px rgba(45,34,27,.11)}
+.value{padding:38px 26px}
+.value svg{width:38px;height:38px;stroke:var(--accent)}
+.section-heading{margin-bottom:56px}
+.eyebrow{color:var(--accent);letter-spacing:.2em}
+h2{letter-spacing:-.025em}
+.process{gap:10px}
+.process-step{padding:30px 18px;border-top:1px solid var(--line)}
+.process-step span{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.service-grid{grid-template-columns:repeat(2,1fr);gap:18px}
+.service-card{position:relative;padding:32px 30px;text-align:left;border:0;border-bottom:1px solid var(--line);background:rgba(255,255,255,.55);transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.service-card:hover{transform:translateY(-4px);background:#fff;box-shadow:0 18px 45px rgba(45,34,27,.09)}
+.service-card h3{min-height:0;margin:0;font-family:"Playfair Display",serif;font-size:1.45rem;font-weight:500}
+.service-card p{margin:8px 0 0;color:var(--accent)}
+.split-layout{border:0;box-shadow:0 28px 80px rgba(45,34,27,.10)}
+.price-panel{background:#2d2621;color:#fff}
+.price-panel .eyebrow{color:#d7b99d}
+.price-panel .price-list{border-color:rgba(255,255,255,.18)}
+.price-panel .price-list div{border-color:rgba(255,255,255,.14)}
+.price-panel .price-list span{color:rgba(255,255,255,.76)}
+.order-panel{border-left:0;background:#fff;padding:54px}
+input,select,textarea{border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;padding:13px 2px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 1px 0 var(--accent)}
+label{letter-spacing:.02em}
+.button-dark{background:var(--dark);border-color:var(--dark)}
+.why-grid{gap:14px}
+.why-card{background:#fff;border:0;padding:34px;box-shadow:0 10px 30px rgba(45,34,27,.055)}
+.about-card{background:#fff;border:0;padding:42px;box-shadow:0 18px 50px rgba(45,34,27,.08)}
+.faq-wrap details{background:#fff;margin-bottom:10px;padding:22px 24px;border:0}
+.contact-section{background:#2b241f}
+.final-contact{background:#d9c8b7}
+.final-contact-inner a{color:#2b241f}
+footer{background:#1d1916}
+@media(max-width:820px){
+  .section{padding:78px 0}
+  .values{margin-top:0;padding-top:0}
+  .values-grid{box-shadow:none}
+  .service-grid{grid-template-columns:1fr}
+  .order-panel{padding:34px 24px!important}
+  .price-panel{padding:38px 24px!important}
+}
+@media(max-width:650px){
+  .nav-wrap{min-height:82px}
+  .hero{min-height:760px!important;background-position:72% center!important}
+  .hero-overlay{background:linear-gradient(90deg,rgba(25,19,16,.88),rgba(25,19,16,.58) 68%,rgba(25,19,16,.28))!important}
+  .hero-content{padding-top:110px!important}
+  .hero h1{font-size:clamp(4rem,20vw,6.2rem)!important}
+  .hero-title{font-size:clamp(2rem,10vw,3rem)!important}
+  .hero-trust{max-width:300px}
+  .value{padding:30px 24px}
+}
