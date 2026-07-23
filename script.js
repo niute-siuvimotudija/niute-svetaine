@@ -101,6 +101,12 @@ async function uploadPhoto(file) {
   return result.secure_url;
 }
 
+const initialConfirmation = document.getElementById("orderConfirmation");
+if (initialConfirmation) {
+  initialConfirmation.hidden = true;
+  initialConfirmation.style.display = "none";
+}
+
 document.getElementById("orderForm")?.addEventListener("submit", async event => {
   event.preventDefault();
 
@@ -122,6 +128,7 @@ document.getElementById("orderForm")?.addEventListener("submit", async event => 
   const files = [...photoInput.files];
   submitButton.disabled = true;
   confirmation.hidden = true;
+  confirmation.style.display = "none";
   message.className = "form-message";
   message.textContent = files.length ? "Įkeliamos nuotraukos..." : "Siunčiamas užsakymas...";
 
@@ -163,6 +170,7 @@ document.getElementById("orderForm")?.addEventListener("submit", async event => 
     message.textContent = "";
     confirmationNumber.textContent = `Užsakymo Nr. ${orderNumber}`;
     confirmation.hidden = false;
+    confirmation.style.display = "grid";
 
     form.reset();
     photoPreview.innerHTML = "";
