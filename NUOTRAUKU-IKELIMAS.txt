@@ -1,0 +1,8 @@
+NAUJŲ DARBŲ NUOTRAUKŲ ĮKĖLIMAS
+
+1. Nuotraukas kelkite į aplanką: assets/darbai/
+2. Failų pavadinimuose naudokite mažąsias raides, skaičius ir brūkšnelius.
+3. index.html faile nuotraukos kelias turi prasidėti: assets/darbai/
+
+Pavyzdys:
+<img src="assets/darbai/naujas-darbas.webp" alt="Darbo aprašymas">
